@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shop Lite | Sun Care Store</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Shop Lite</h1>
+    <button id="cart-toggle" data-testid="cart-toggle" aria-label="Open cart">
+      Cart (<span data-testid="cart-count">0</span>)
+    </button>
+  </header>
+
+  <main>
+    <section aria-label="Products">
+      <ul id="product-grid" class="grid" data-testid="product-grid"></ul>
+    </section>
+
+    <aside id="cart" class="cart" data-testid="cart" hidden aria-label="Cart">
+      <h2>Your cart</h2>
+      <p data-testid="cart-empty">Your cart is empty.</p>
+      <ul id="cart-lines" data-testid="cart-lines"></ul>
+
+      <form id="discount-form" data-testid="discount-form">
+        <label for="discount-code">Discount code</label>
+        <input id="discount-code" name="code" data-testid="discount-input" />
+        <button type="submit" data-testid="discount-apply">Apply</button>
+        <p class="msg" data-testid="discount-message" role="status"></p>
+      </form>
+
+      <dl class="totals">
+        <dt>Subtotal</dt><dd data-testid="subtotal">$0.00</dd>
+        <dt>Discount</dt><dd data-testid="discount">-$0.00</dd>
+        <dt>Shipping</dt><dd data-testid="shipping">$0.00</dd>
+        <dt>Total</dt><dd data-testid="total">$0.00</dd>
+      </dl>
+
+      <button id="checkout-btn" data-testid="checkout-btn" disabled>Checkout</button>
+    </aside>
+
+    <section id="checkout" data-testid="checkout" hidden aria-label="Checkout">
+      <h2>Checkout</h2>
+      <form id="checkout-form" novalidate>
+        <label for="name">Full name</label>
+        <input id="name" name="name" data-testid="name" />
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" data-testid="email" />
+        <label for="zip">ZIP code</label>
+        <input id="zip" name="zip" data-testid="zip" />
+        <p class="msg error" data-testid="checkout-error" role="alert"></p>
+        <button type="submit" data-testid="place-order">Place order</button>
+      </form>
+    </section>
+
+    <section id="confirmation" data-testid="confirmation" hidden>
+      <h2>Thanks for your order!</h2>
+      <p>Order number: <strong data-testid="order-number"></strong></p>
+      <p>Total charged: <strong data-testid="order-total"></strong></p>
+      <button data-testid="continue-shopping" id="continue-shopping">Continue shopping</button>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

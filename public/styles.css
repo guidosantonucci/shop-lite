@@ -1,0 +1,20 @@
+* { box-sizing: border-box; }
+body { font-family: system-ui, sans-serif; margin: 0; color: #1d1d1f; background: #fffaf2; }
+header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.5rem; background: #ffd34d; }
+header h1 { margin: 0; font-size: 1.4rem; }
+main { padding: 1.5rem; display: grid; gap: 1.5rem; }
+.grid { list-style: none; padding: 0; margin: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+.card { background: #fff; border: 1px solid #eee; border-radius: 10px; padding: 1rem; }
+.card h3 { margin: 0 0 .25rem; font-size: 1rem; }
+.cart, #checkout, #confirmation { background: #fff; border: 1px solid #eee; border-radius: 10px; padding: 1rem; max-width: 480px; }
+.cart li { display: flex; gap: .5rem; align-items: center; margin-bottom: .5rem; }
+.cart li .name { flex: 1; }
+.totals { display: grid; grid-template-columns: 1fr auto; }
+.totals dd { margin: 0; text-align: right; }
+form { display: grid; gap: .4rem; margin: 1rem 0; }
+input { padding: .45rem; border: 1px solid #bbb; border-radius: 6px; }
+button { padding: .45rem .8rem; border: 0; border-radius: 6px; background: #1d1d1f; color: #fff; cursor: pointer; }
+button:disabled { opacity: .4; cursor: not-allowed; }
+.msg { min-height: 1.2em; margin: 0; font-size: .9rem; }
+.msg.ok { color: #1a7f37; }
+.msg.error { color: #b42318; }
